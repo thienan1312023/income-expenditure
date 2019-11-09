@@ -1,5 +1,5 @@
 
-import User from './models/user';
+import { User } from '../models';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 require('dotenv').config();
@@ -33,7 +33,7 @@ const userController = {
     });
   },
 
-  user_login : async function (req, res) {
+  user_login: async function (req, res) {
     let user;
     try {
       user = await User.findOne({ userName: req.body.userName });

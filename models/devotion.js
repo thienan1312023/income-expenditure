@@ -11,4 +11,4 @@ const devotionSchema = new Schema({
     updatedAt: {type: Date, required: false},    
 });
 devotionSchema.plugin(mongoosePaginate);
-module.exports = mongoose.model('Devotion', devotionSchema);
+export default mongoose.model('Devotion', devotionSchema);
