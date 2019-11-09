@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const disbursementSchema = new Schema({
@@ -10,5 +10,5 @@ const disbursementSchema = new Schema({
     updatedAt: {type: Date, required: false},    
 });
 
-module.exports = mongoose.model('disbursement', disbursementSchema);
+export default mongoose.model('Disbursement', disbursementSchema);
 

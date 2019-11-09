@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-var ProvincecitySchema = new Schema({
+const ProvincecitySchema = new Schema({
     ProvinceCityId: {type: String, required: true, unique: true},
     ProvinceCityName: {type: String, required: true},
     CountryId:{type: Number, required: true}
@@ -9,5 +9,5 @@ var ProvincecitySchema = new Schema({
 
 ProvincecitySchema.index({ProvinceCityName: "text"});
 
-module.exports = mongoose.model('Provincecity', ProvincecitySchema);
+export default mongoose.model('Provincecity', ProvincecitySchema);
 

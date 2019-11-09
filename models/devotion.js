@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 const mongoosePaginate = require('mongoose-paginate');
 const devotionSchema = new Schema({
@@ -11,4 +11,4 @@ const devotionSchema = new Schema({
     updatedAt: {type: Date, required: false},    
 });
 devotionSchema.plugin(mongoosePaginate);
-module.exports = mongoose.model('devotion', devotionSchema);
+module.exports = mongoose.model('Devotion', devotionSchema);

@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
 const typeDevotionSchema = new Schema({
     name: {type: String, required: true, unique: true},
@@ -10,5 +10,5 @@ const typeDevotionSchema = new Schema({
     updatedAt: {type: Date, required: false}
 });
 
-module.exports = mongoose.model('typeDevotion', typeDevotionSchema);
+export default mongoose.model('TypeDevotion', typeDevotionSchema);
 

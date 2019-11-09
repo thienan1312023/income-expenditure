@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../models/User');
 var jwtDecode = require('jwt-decode');
 require('dotenv').config();
 

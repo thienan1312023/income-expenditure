@@ -1,8 +1,7 @@
-const Memo = require('../models/Memo');
+import { Devotion } from '../models';
 
-
-exports.memo_create = function (req, res, next) {
-    let memo = new Memo(
+exports.devotion_create = function (req, res, next) {
+    let devotion = new Devotion(
         {
             title: req.body.title,
             content: req.body.content,
@@ -11,7 +10,7 @@ exports.memo_create = function (req, res, next) {
             createBy: req.body.userName
         }
     );
-    memo.save(function (err) {
+    devotion.save(function (err) {
         if (err) {
             return next(err);
         }
@@ -36,7 +35,7 @@ exports.memo_delete = function (req, res, next) {
 };
 
 exports.memo_getAll = function (req, res) {
-    Memo.find({ createBy: req.userName }).sort({ date: -1 }).exec(function(err, docs){
+    Memo.find({ createBy: req.userName }).sort({ date: -1 }).exec(function (err, docs) {
         if (!err) {
             res.send(docs);
         }

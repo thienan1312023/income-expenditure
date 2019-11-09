@@ -1,7 +1,7 @@
-const express = require('express');
-const User = require('../models/user');
-const jwt = require('jsonwebtoken');
-var bcrypt = require('bcryptjs');
+
+import User from './models/user';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 require('dotenv').config();
 
 exports.user_signup = function(req, res, next) {

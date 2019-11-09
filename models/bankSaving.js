@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const bankSavingSchema = new Schema({
@@ -10,5 +10,5 @@ const bankSavingSchema = new Schema({
     updatedAt: {type: Date, required: false},    
 });
 
-module.exports = mongoose.model('bankSaving', bankSavingSchema);
+export default mongoose.model('BankSaving', bankSavingSchema);
 

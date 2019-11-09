@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-var MemoSchema = new Schema({
+const MemoSchema = new Schema({
     title: { type: String, required: true, default: '' },
     content: { type: String, required: true, default: '' },
     date: { type: Date, required: true, default: Date.now() },
@@ -11,4 +11,4 @@ var MemoSchema = new Schema({
 
 
 // Export the model
-module.exports = mongoose.model('memo', MemoSchema);
+export default mongoose.model('Memo', MemoSchema);
