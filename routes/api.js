@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 const requireAuth = require('../middlewares/require_authentication');
 
 router.use('/user', require('./user'));
-router.use('/memos', require('./devotion'));
-module.exports = router;
+router.use('/devotion', require('./devotion'));
+router.use('/disbursement', require('./disbursement'));
+export default router;
