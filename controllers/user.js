@@ -6,11 +6,11 @@ require('dotenv').config();
 
 const userController = {
   user_signup: function (req, res, next) {
-    var userNew = new User({
+    const userNew = new User({
       userName: req.body.userName,
       password: req.body.password
     });
-    var salt = bcrypt.genSaltSync(10);
+    const salt = bcrypt.genSaltSync(10);
     bcrypt.hash(userNew.password, salt, function (err, hash) {
       if (err) return next(err);
       userNew.password = hash;
