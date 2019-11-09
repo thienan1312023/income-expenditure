@@ -1,9 +1,9 @@
-var express = require('express');
-const requireAuth = require('../middlewares/require_authentication');
-var router = express.Router();
+import express from 'express';
+import requireAuth from '../middlewares/require_authentication';
+const router = express.Router();
 
 // Require the controllers WHICH WE DID NOT CREATE YET!!
-var memo_controller = require('../controllers/memo');
+const devotion_controller = require('../controllers/memo');
 
 router.post('/create', memo_controller.memo_create);
 

@@ -1,5 +1,4 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import jwt from 'jsonwebtoken';
 var jwtDecode = require('jwt-decode');
 require('dotenv').config();
 
@@ -25,21 +24,3 @@ module.exports = function (req, res, next) {
     next(error);
   }
 };
-
-
-// module.exports = {
-//   getAccountId: function (apiKey, cb) {
-//     sql.connect(connectionString, (connection) => {
-//       connection.query(query1, (result) => {
-//         console.log(result1);
-//         connection.query(query2, { ...result1 }, (result) => {
-//           console.log(result2);
-//           connection.query(query3, { ...result2 },
-//             (result) => {
-//               console.log(result3);
-//             })
-//         })
-//       });
-//     })
-//   }
-// };

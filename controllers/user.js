@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 require('dotenv').config();
 
-exports.user_signup = function(req, res, next) {
+const user_signup = function (req, res, next) {
   var userNew = new User({
     userName: req.body.userName,
     password: req.body.password
@@ -34,7 +34,7 @@ exports.user_signup = function(req, res, next) {
 
 
 
-exports.user_login = async function(req, res) {
+const user_login = async function (req, res) {
   let user;
   try {
     user = await User.findOne({ userName: req.body.userName });
@@ -72,4 +72,7 @@ exports.user_login = async function(req, res) {
   }
 };
 
-
+export default {
+  user_signup,
+  user_login
+}

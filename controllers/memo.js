@@ -1,6 +1,5 @@
 const Memo = require('../models/Memo');
 
-
 exports.memo_create = function (req, res, next) {
     let memo = new Memo(
         {
