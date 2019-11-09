@@ -1,24 +1,18 @@
-import { Devotion } from '../models';
+import { disbursemen } from '../models';
 import crud from './crud';
-const devotion_create = function (req, res, next) {
-    crud.create(req, res, Devotion);
-};
-
-const devotion_update = function (req, res, next) {
-    crud.update(req, res, Devotion);
-};
-
-const devotion_delete = function (req, res, next) {
-    crud.remove(req, res, Devotion);
-};
-
-const devotion_getAll = function (req, res) {
-    crud.readMany(req, res, Devotion);
+const disbursementController = {
+    disbursement_create: function (req, res, next) {
+        crud.create(req, res, disbursemen);
+    },
+    disbursement_update = function (req, res, next) {
+        crud.update(req, res, disbursemen);
+    },
+    disbursement_delete = function (req, res, next) {
+        crud.remove(req, res, disbursemen);
+    },
+    disbursement_getAll = function (req, res) {
+        crud.readMany(req, res, disbursemen);
+    }
 }
 
-export default {
-    devotion_create,
-    devotion_update,
-    devotion_delete,
-    devotion_getAll
-}
+export default disbursementController;
