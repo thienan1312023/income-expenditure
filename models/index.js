@@ -7,7 +7,7 @@ import ProvinceCity from './Provincecity';
 import TypeDevotion from './TypeDevotion';
 import User from './User';
 
-export default {
+export {
   BankSaving,
   Cash,
   Devotion,

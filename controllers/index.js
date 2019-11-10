@@ -1,9 +1,9 @@
-import user from './user';
-import devotion from './devotion';
-import disbursement from './disbursement';
+import User from './user';
+import Devotion from './devotion';
+import Disbursement from './disbursement';
 
-export default {
-    User, 
+export {
+    User,
     Devotion,
     Disbursement
 }
