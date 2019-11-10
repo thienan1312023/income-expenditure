@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
-var jwtDecode = require('jwt-decode');
+import jwtDecode from 'jwt-decode';
 require('dotenv').config();
 
-module.exports = function (req, res, next) {
+export default function (req, res, next) {
   var token = req.headers.authorization;
   var decodedValue = jwtDecode(token);
   if (decodedValue.userId) {

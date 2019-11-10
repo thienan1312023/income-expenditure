@@ -2,7 +2,7 @@ import express from 'express';
 import requireAuth from '../middlewares/require_authentication';
 const router = express.Router();
 
-import Devotion from '../controllers/memo';
+import { Devotion } from '../controllers';
 
 router.post('/create', Devotion.devotion_create);
 
@@ -12,4 +12,4 @@ router.delete('/:id/delete', Devotion.devotion_delete);
 
 router.get('/', requireAuth, Devotion.devotion_getAll);
 
-module.exports = router;
+export default router;

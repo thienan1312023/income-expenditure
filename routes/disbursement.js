@@ -2,7 +2,7 @@ import express from 'express';
 import requireAuth from '../middlewares/require_authentication';
 const router = express.Router();
 
-import Disbursement from '../controllers/memo';
+import { Disbursement } from '../controllers';
 
 router.post('/create', Disbursement.disbursemen_create);
 
@@ -12,4 +12,4 @@ router.delete('/:id/delete', Disbursement.disbursemen_delete);
 
 router.get('/', requireAuth, Disbursement.disbursemen_getAll);
 
-module.exports = router;
+export default router;
