@@ -2,14 +2,14 @@ import express from 'express';
 import requireAuth from '../middlewares/require_authentication';
 const router = express.Router();
 
-const devotion_controller = require('../controllers/memo');
+import Devotion from '../controllers/memo';
 
-router.post('/create', devotion_controller.devotion_create);
+router.post('/create', Devotion.devotion_create);
 
-router.put('/:id/update', requireAuth, devotion_controller.devotion_update);
+router.put('/:id/update', requireAuth, Devotion.devotion_update);
 
-router.delete('/:id/delete', devotion_controller.devotion_delete);
+router.delete('/:id/delete', Devotion.devotion_delete);
 
-router.get('/', requireAuth, devotion_controller.devotion_getAll);
+router.get('/', requireAuth, Devotion.devotion_getAll);
 
 module.exports = router;

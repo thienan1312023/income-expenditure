@@ -2,14 +2,14 @@ import express from 'express';
 import requireAuth from '../middlewares/require_authentication';
 const router = express.Router();
 
-const disbursemen_controller = require('../controllers/memo');
+import Disbursement from '../controllers/memo';
 
-router.post('/create', disbursemen_controller.disbursemen_create);
+router.post('/create', Disbursement.disbursemen_create);
 
-router.put('/:id/update', requireAuth, disbursemen_controller.disbursemen_update);
+router.put('/:id/update', requireAuth, Disbursement.disbursemen_update);
 
-router.delete('/:id/delete', disbursemen_controller.disbursemen_delete);
+router.delete('/:id/delete', Disbursement.disbursemen_delete);
 
-router.get('/', requireAuth, disbursemen_controller.disbursemen_getAll);
+router.get('/', requireAuth, Disbursement.disbursemen_getAll);
 
-export default router;
+module.exports = router;

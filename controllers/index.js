@@ -3,7 +3,7 @@ import devotion from './devotion';
 import disbursement from './disbursement';
 
 export default {
-    user, 
-    devotion,
-    disbursement
+    User, 
+    Devotion,
+    Disbursement
 }
