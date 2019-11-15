@@ -1,8 +1,8 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const api = require('./routes/api'); // Imports routes for the memos
-const cors = require('cors');
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import api from './routes/api';
+import cors from  'cors';
 const PORT = process.env.PORT || 3009;
 
 //const { mongoose } = require('./db.js');
@@ -19,4 +19,5 @@ app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.listen(PORT, () => console.log('Server started at port in env'));
+console.log(api);
 app.use('/api', api);
