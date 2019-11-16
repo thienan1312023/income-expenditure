@@ -10,6 +10,6 @@ router.put('/:id/update', requireAuth, Devotion.devotion_update);
 
 router.delete('/:id/delete', Devotion.devotion_delete);
 
-router.get('/', requireAuth, Devotion.devotion_getAll);
+router.get('/', Devotion.devotion_getAll);
 
 export default router;

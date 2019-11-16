@@ -1,5 +1,6 @@
 
 import { User } from '../models';
+import crud from './crud';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 require('dotenv').config();
@@ -69,6 +70,19 @@ const userController = {
         message: "Login Failed"
       });
     }
+  },
+
+  user_create: function (req, res, next) {
+    crud.create(req, res, User);
+  },
+  user_update: function (req, res, next) {
+    crud.update(req, res, User);
+  },
+  user_delete: function (req, res, next) {
+    crud.remove(req, res, User);
+  },
+  user_getAll: function (req, res) {
+    crud.readMany(req, res, User);
   }
 }
 

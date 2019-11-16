@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import api from './routes/api';
 import cors from  'cors';
-const PORT = process.env.PORT || 3009;
+const PORT = process.env.PORT || 3000;
 
 //const { mongoose } = require('./db.js');
 mongoose.connect('mongodb://practice10:practice10@ds237735.mlab.com:37735/manager-org', { useNewUrlParser: true }, function (error) {
@@ -19,5 +19,4 @@ app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.listen(PORT, () => console.log('Server started at port in env'));
-console.log(api);
 app.use('/api', api);
