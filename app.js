@@ -6,11 +6,11 @@ import cors from  'cors';
 const PORT = process.env.PORT || 3000;
 
 //const { mongoose } = require('./db.js');
-mongoose.connect('mongodb://practice10:practice10@ds237735.mlab.com:37735/manager-org', { useNewUrlParser: true }, function (error) {
+mongoose.connect('mongodb://test10:test10@ds237735.mlab.com:37735/manager-org', { useNewUrlParser: true }, function (error) {
   if (!error) {
     console.log("Connect Server mLab Manage Money Successfully");
   } else {
-    console.log("Has error when connect");
+    console.log("Has error when connect" + error);
   }
 });
 mongoose.set('useFindAndModify', false);

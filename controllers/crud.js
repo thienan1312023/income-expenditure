@@ -11,9 +11,11 @@ const create = (req, res, Collection) => {
 };
 
 const readMany = (req, res, Collection) => {
-    let query = res.locals.query || {};
-
-    Collection.find(query, (e, result) => {
+    let query = req.body.query || {};
+    let options = req.query || {};
+    const offset = options.offset && parseInt(options.offset);
+    const limit = options.limit && parseInt(options.limit);
+    Collection.paginate(query, { offset, limit }, (e, result) => {
         if (e) {
             res.status(500).send(e);
             console.log(e.message);
@@ -38,7 +40,7 @@ const readOne = (req, res, Collection) => {
 
 const update = (req, res, Collection) => {
     const changedEntry = req.body;
-    Collection.update({ _id: req.params._id }, { $set: changedEntry }, (e) => {
+    Collection.update({ _id: req.params.id }, { $set: changedEntry }, (e) => {
         if (e)
             res.sendStatus(500);
         else
