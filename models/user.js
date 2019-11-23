@@ -17,6 +17,8 @@ const userSchema = new Schema({
     createdAt: { type: Date, default: Date.now(), required: true },
     updatedAt: { type: Date, required: false }
 });
+
+userSchema.index({'$**': 'text'});
 userSchema.plugin(mongoosePaginate);
 export default mongoose.model('User', userSchema);
 

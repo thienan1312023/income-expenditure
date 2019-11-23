@@ -15,4 +15,6 @@ router.delete('/:id/delete', User.user_delete);
 
 router.get('/', User.user_getAll);
 
+router.get('/search', User.user_searchText);
+
 export default router;

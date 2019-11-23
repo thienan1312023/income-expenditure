@@ -48,7 +48,7 @@ const update = (req, res, Collection) => {
     });
 };
 
-const remove = (req, res) => {
+const remove = (req, res, Collection) => {
     Collection.remove({ _id: req.params._id }, (e) => {
         if (e)
             res.status(500).send(e);
@@ -57,10 +57,26 @@ const remove = (req, res) => {
     });
 };
 
+const searchText = (req, res, Collection) => {
+    let options = req.query || {};
+    let searchString = options.text;
+    const offset = options.offset && parseInt(options.offset);
+    const limit = options.limit && parseInt(options.limit);
+    Collection.find({ $text: { $search: searchString } })
+        .skip(offset)
+        .limit(limit)
+        .exec(function (err, docs) { 
+            res.send(docs);
+        });
+
+}
+
+
 export default {
     create,
     readMany,
     readOne,
     update,
-    remove
+    remove,
+    searchText
 };

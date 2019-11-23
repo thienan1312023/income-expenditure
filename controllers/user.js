@@ -83,6 +83,9 @@ const userController = {
   },
   user_getAll: function (req, res) {
     crud.readMany(req, res, User);
+  },
+  user_searchText: function(req, res){
+    crud.searchText(req, res, User);
   }
 }
 
