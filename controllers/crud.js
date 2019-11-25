@@ -49,7 +49,7 @@ const update = (req, res, Collection) => {
 };
 
 const remove = (req, res, Collection) => {
-    Collection.remove({ _id: req.params._id }, (e) => {
+    Collection.remove({ _id: req.params.id }, (e) => {
         if (e)
             res.status(500).send(e);
         else
@@ -58,8 +58,8 @@ const remove = (req, res, Collection) => {
 };
 
 const searchText = (req, res, Collection) => {
-    let options = req.query || {};
-    let searchString = options.text;
+  let options = req.query || {};
+    let searchString = options.searchText;
     const offset = options.offset && parseInt(options.offset);
     const limit = options.limit && parseInt(options.limit);
     Collection.find({ $text: { $search: searchString } })
