@@ -57,15 +57,25 @@ const remove = (req, res, Collection) => {
     });
 };
 
+const removeMany = (req, res, Collection) => {
+    const lstIdDelete = req.body.lstId;
+    Collection.deleteMany({ _id: { $in: lstIdDelete } }, (e) => {
+        if (e)
+            res.status(500).send(e);
+        else
+            res.sendStatus(200);
+    })
+}
+
 const searchText = (req, res, Collection) => {
-  let options = req.query || {};
+    let options = req.query || {};
     let searchString = options.searchText;
     const offset = options.offset && parseInt(options.offset);
     const limit = options.limit && parseInt(options.limit);
     Collection.find({ $text: { $search: searchString } })
         .skip(offset)
         .limit(limit)
-        .exec(function (err, docs) { 
+        .exec(function (err, docs) {
             res.send(docs);
         });
 
@@ -78,5 +88,6 @@ export default {
     readOne,
     update,
     remove,
-    searchText
+    searchText,
+    removeMany
 };

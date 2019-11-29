@@ -86,6 +86,10 @@ const userController = {
   },
   user_searchText: function(req, res){
     crud.searchText(req, res, User);
+  },
+
+  user_removeMany: function(req, res){
+    crud.removeMany(req, res, User);
   }
 }
 
